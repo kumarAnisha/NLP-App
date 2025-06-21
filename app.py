@@ -4,6 +4,8 @@ import json
 import ner as nf
 import language_detection as ld
 import sentiment as st
+import os
+
 app = Flask(__name__)
 dbo=database()
 
@@ -77,4 +79,5 @@ def perform_sa():
      result=st.detect_sentiment(text)
      return render_template('/sentiment.html',result=result)
    
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=os.environ.get('PORT', 5000))
