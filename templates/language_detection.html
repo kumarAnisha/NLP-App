@@ -1,0 +1,24 @@
+<!DOCTYPE><html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        
+        <title>Language_detection</title>
+    </head>
+    <body>
+        <h1>Language Detection</h1>
+       
+       
+        <form action="/perform_ld" method="post">
+            <label>Enter your text here</label></br>
+            <textarea type="text" name="text" placeholder="Enter your text" required></textarea></br>
+            <input type="submit" value="submit"></input></br>
+           
+        </form>
+       {% if result %}
+        <h3>Language Detection Result</h3>
+        <p style="color:green">{{result}}</p>
+        {% endif %}
+        
+    </body>
+</html>
